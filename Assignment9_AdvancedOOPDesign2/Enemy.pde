@@ -30,15 +30,11 @@ class Enemy extends GameObject {
     while (i < engine.size()) {
       GameObject thing = engine.get(i);
       if (thing instanceof Bullet) {
-        //if (boxBox(x, y, z, thing.x, thing.y, thing.z)) {
-        //  hp -= 1;
-        //}
         if (recRect(x, y, z, 40, 40, thing.x, thing.y, thing.z, 5, 5)) {
           hp -= 1;
           thing.hp = 0;
           for (int j = 0; j < 5; j++) {
             engine.add(new Particle(thing.x, thing.y, thing.z));
-          //engine.add(new Particle(thing.x, thing.y, thingz));
           }
         }
       }
@@ -49,7 +45,6 @@ class Enemy extends GameObject {
           thing.hp -= 1;
           for (int j = 0; j < 5; j++) {
             engine.add(new Particle(thing.x, thing.y, thing.z));
-          //engine.add(new Particle(thing.x, thing.y, thingz));
           }          
         }
       } 

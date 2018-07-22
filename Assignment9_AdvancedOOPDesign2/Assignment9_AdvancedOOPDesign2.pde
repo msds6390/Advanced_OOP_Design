@@ -14,8 +14,8 @@ color spacecadet = #05CBFA; // https://rgbcolorcode.com/color/space-cadet
 color electricgreen = #00E600;
 color outerspace = #414A4C;
 //color outerSpaceBlack = #000000;
-//color deepspacesparkle = #4A646C;
-color deepSpaceSparkleWhite = #ffffff;
+color deepspacesparkle = #4A646C;
+//color deepSpaceSparkleWhite = #ffffff;
 //color darkOrange = #AA5012;
 
 Ship myShip;

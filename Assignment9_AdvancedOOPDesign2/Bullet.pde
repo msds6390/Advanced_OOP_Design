@@ -30,7 +30,7 @@ class Bullet extends GameObject {
     translate(x, y, z);
     //fill(250, 240, 142);
     fill(electricgreen);
-    box(10);
+    box(5);
     popMatrix();
   }
 

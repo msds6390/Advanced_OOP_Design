@@ -43,7 +43,7 @@ class Star extends GameObject {
     pushMatrix();
     translate(offsetX, offsetY);
     scale(scaleZ);
-    fill(deepSpaceSparkleWhite);
+    fill(deepspacesparkle);
     ellipse(0,0,40,40);
     popMatrix();
   }
