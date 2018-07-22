@@ -12,6 +12,7 @@ class Ship extends GameObject {
     dx = 0;
     dy = 0;
     dz = 0;
+    hp = 20;
     size = 20;
     //myGun = new BasicGun();
     //myGun = new MachineGun();
@@ -53,6 +54,12 @@ class Ship extends GameObject {
   }
 
   boolean hasDied() {
+    if (hp <= 0) {
+      for (int j = 0; j < 5; j++) {
+        engine.add(new Particle(x, y, z));
+      }        
+      return true;
+    }
     return false;
   }
 }

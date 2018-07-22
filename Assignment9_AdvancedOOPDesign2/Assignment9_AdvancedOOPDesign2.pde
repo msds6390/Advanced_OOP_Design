@@ -12,8 +12,8 @@ color darkblue = #2F6A96;
 color orange = #EE7036;
 color spacecadet = #05CBFA; // https://rgbcolorcode.com/color/space-cadet
 color electricgreen = #00E600;
-//color outerspace = #414A4C;
-color outerSpaceBlack = #000000;
+color outerspace = #414A4C;
+//color outerSpaceBlack = #000000;
 //color deepspacesparkle = #4A646C;
 color deepSpaceSparkleWhite = #ffffff;
 //color darkOrange = #AA5012;
@@ -34,6 +34,7 @@ boolean upKey, leftKey, downKey, rightKey, spaceKey, forwardKey, backwardKey;
 import processing.opengl.*;
 
 void setup() {
+  textAlign(CENTER);
   size(600, 600, P3D);
   smooth();
   stroke(0);
@@ -49,7 +50,8 @@ void setup() {
 
 void draw() {
   lights();
-  background(outerSpaceBlack);
+  //background(outerSpaceBlack); // Really hard to see ship damage particles with black background
+  background(outerspace);
   pushMatrix();
   translate(0.5*width, 0.5*height);
   ss.run();

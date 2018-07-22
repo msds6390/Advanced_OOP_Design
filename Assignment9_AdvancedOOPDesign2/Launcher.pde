@@ -21,6 +21,9 @@ class Launcher extends GameObject {
   }
   
   void act() {
+    if (frameCount == 30 ) {
+      engine.add(new Message("LEVEL 1", width/2, height/4, -1000, 40));
+    }
     if (frameCount < 100) {
     
     } else if (frameCount < 600) {
