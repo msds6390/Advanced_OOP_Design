@@ -25,9 +25,10 @@ Star[] stars;
 
 int numStars = 400;
 int timer = 0;
+float shipSpeed = 5;
 ArrayList<GameObject> engine;    // ArrayList that stores many different types of objects - bullets, spaceships, particle effects, etc.
                                  // data structure that holds things needed to be processed
-boolean upKey, leftKey, backKey, rightKey, spaceKey;
+boolean upKey, leftKey, downKey, rightKey, spaceKey, forwardKey, backwardKey;
 
 
 import processing.opengl.*;
@@ -72,8 +73,10 @@ void keyPressed() {
   // lefty or righty control
   if (key == 'w' || key == 'W' || key == '5') upKey = true;
   if (key == 'a' || key == 'A' || key == '1') leftKey = true;
-  if (key == 's' || key == 'S' || key == '2') backKey = true;
+  if (key == 's' || key == 'S' || key == '2') downKey = true;
   if (key == 'd' || key == 'D' || key == '3') rightKey = true;
+  if (key == 'e' || key == 'E' || key == '6') forwardKey = true;
+  if (key == 'q' || key == 'Q' || key == '4') backwardKey = true;
   if (key == ' ') spaceKey = true;
 }
 
@@ -81,7 +84,9 @@ void keyReleased() {
   // lefty or righty control
   if (key == 'w' || key == 'W' || key == '5') upKey = false;
   if (key == 'a' || key == 'A' || key == '1') leftKey = false;
-  if (key == 's' || key == 'S' || key == '2') backKey = false;
+  if (key == 's' || key == 'S' || key == '2') downKey = false;
   if (key == 'd' || key == 'D' || key == '3') rightKey = false;
+  if (key == 'e' || key == 'E' || key == '6') forwardKey = false;
+  if (key == 'q' || key == 'Q' || key == '4') backwardKey = false;  
   if (key == ' ') spaceKey = false;
 }

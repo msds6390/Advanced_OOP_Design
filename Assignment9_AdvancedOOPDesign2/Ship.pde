@@ -8,11 +8,11 @@ class Ship extends GameObject {
   Ship() {
     x = width/2;  // start at center of screen
     y = width/2;  // start at center of screen
-    z = 0;
+    z = width/2;
     dx = 0;
     dy = 0;
     dz = 0;
-    size = 25;
+    size = 20;
     //myGun = new BasicGun();
     //myGun = new MachineGun();
     myGun = new vGun();
@@ -35,10 +35,13 @@ class Ship extends GameObject {
     dz = 0;
 
     // lefty or righty player
-    if (upKey) dy = -5;  // can make -5 into a speed variable
-    if (leftKey) dx = -5;
-    if (backKey) dy = 5;
-    if (rightKey) dx = 5;
+    if (upKey) dy = -shipSpeed;  // can make -5 into a speed variable
+    if (leftKey) dx = -shipSpeed;
+    if (downKey) dy = shipSpeed;
+    if (rightKey) dx = shipSpeed;
+    if (forwardKey) dz = -shipSpeed;
+    if (backwardKey) dz = shipSpeed;
+    
     //if (spaceKey & frameCount % 5 == 0) engine.add(new Bullet());
     if (spaceKey) myGun.shoot();
 
