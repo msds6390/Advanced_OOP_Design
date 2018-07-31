@@ -1,8 +1,8 @@
 /*
- MSDS 6390 Assignment 8: Midterm
+ MSDS 6390 Assignment 9
  Arcade Game- Space Shooter
  Team: Jostein Barry-Straume, Brian Yu
- Date: 07/13/18
+ Date: 07/31/18
  Sources:
  https://www.youtube.com/watch?v=MJh3blPxcQw
  */
@@ -29,7 +29,7 @@ float shipSpeed = 5;
 ArrayList<GameObject> engine;    // ArrayList that stores many different types of objects - bullets, spaceships, particle effects, etc.
                                  // data structure that holds things needed to be processed
 boolean upKey, leftKey, downKey, rightKey, spaceKey, forwardKey, backwardKey;
-
+int score = 0;
 
 import processing.opengl.*;
 
@@ -50,8 +50,23 @@ void setup() {
 
 void draw() {
   lights();
-  //background(outerSpaceBlack); // Really hard to see ship damage particles with black background
   background(outerspace);
+  if (myShip.hasDied()) {
+    fill(175, 0, 42);
+  }
+  textSize(40);
+  text(str(score), 40, 40);
+  if (myShip.hasDied()) {
+    pushMatrix();
+    translate(width/2, height/2, 0);
+    stroke(255);
+    fill(175, 0, 42);
+    textSize(80);
+    text("GAME OVER", 0, 0);
+    stroke(0);
+    popMatrix();
+  }
+  
   pushMatrix();
   translate(0.5*width, 0.5*height);
   ss.run();

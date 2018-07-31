@@ -1,3 +1,5 @@
+// Source:
+// https://www.youtube.com/watch?v=9LdIa5jc9V0
 class Message extends GameObject {
 
   float alpha;
@@ -31,6 +33,6 @@ class Message extends GameObject {
   }
   
   boolean hasDied() {
-    return dz > 100 || hp == 0;
+    return z > 100 || hp == 0;
   }
 }

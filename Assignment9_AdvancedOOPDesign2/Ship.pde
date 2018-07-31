@@ -55,9 +55,16 @@ class Ship extends GameObject {
 
   boolean hasDied() {
     if (hp <= 0) {
-      for (int j = 0; j < 5; j++) {
-        engine.add(new Particle(x, y, z));
-      }        
+      //for (int j = 0; j < 5; j++) {
+      //  engine.add(new Particle(x, y, z));
+      //}
+      //fill(175, 0, 42);
+      //textSize(80);
+      //text("GAME OVER", 0, 0);
+      //pushMatrix();
+      //translate(0, 0, 0);
+      //engine.add(new Message("GAME OVER", 0, 0, -500, 40));
+      //popMatrix();
       return true;
     }
     return false;

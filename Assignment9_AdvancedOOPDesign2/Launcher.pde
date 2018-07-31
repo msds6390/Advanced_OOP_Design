@@ -21,16 +21,22 @@ class Launcher extends GameObject {
   }
   
   void act() {
-    if (frameCount == 30 ) {
+    if (frameCount == 10 ) {
+      pushMatrix();
       engine.add(new Message("LEVEL 1", width/2, height/4, -1000, 40));
-    }
-    if (frameCount < 100) {
-    
+      popMatrix();
+    //} else if(score == 10) { 
+    //  engine.add(new Message("LEVEL 2", width/2, height/4, -1000, 40));
+    //} else if(score == 20) { 
+    //  engine.add(new Message("LEVEL 3", width/2, height/4, -1000, 40));
     } else if (frameCount < 600) {
       straightLine(100);
-    } else if (frameCount < 1100) {
+    } else if (frameCount == 3000) {
+      pushMatrix();
+      engine.add(new Message("LEVEL 2", width/2, height/4, -1000, 40));
+      popMatrix();
       straightLine(400);
-    } else if (frameCount < 1500) {
+    } else if (frameCount < 2000) {
       //doubleLine();
       randomWave();
     } else {
